@@ -1,0 +1,11 @@
+[Unit]
+Description=Update system on boot with apt-get
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=root
+ExecStart=/usr/bin/bash /usr/local/bin/sys-update.sh
+
+[Install]
+WantedBy=multi-user.target
